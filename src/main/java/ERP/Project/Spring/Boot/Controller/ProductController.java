@@ -25,24 +25,18 @@ public class ProductController {
         return productService.GetAllProducts();
     }
 
-
     @PostMapping("/add")
     public Product CreateProduct(@RequestBody Product product){
         return productService.CreateProduct(product);
     }
 
-
     @PutMapping("/{id}")
     public Product Update(@PathVariable Long id,@RequestBody Product product){
-        return productService.UpdateProduct(id,product);
+        return productService.updateProduct(id,product);
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id){
         return productService.DeleteProduct(id);
     }
-
-
-
-
 }
